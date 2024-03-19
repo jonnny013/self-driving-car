@@ -17,6 +17,7 @@ class Car {
   update() {
     this.#move()
     this.sensor.update()
+    console.log('update')
   }
 
   #move() {

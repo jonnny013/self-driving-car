@@ -10,6 +10,7 @@ class Sensor {
 
   update() {
     this.rays = []
+    console.log(this.rays)
     for (let i = 0; this.rayCount; i++) {
       const rayAngle = lerp(
         this.raySpread / 2,
@@ -29,9 +30,12 @@ class Sensor {
       ctx.beginPath()
       ctx.lineWidth = 2
       ctx.strokeStyle = 'yellow'
+      console.log('logging: ',this.rays, this.rays)
       ctx.moveTo(this.rays[i][0].x, this.rays[i][0].y)
       ctx.lineTo(this.rays[i][1].x, this.rays[i][1].y)
       ctx.stroke()
+
     }
+    console.log(this.rays)
   }
 }
