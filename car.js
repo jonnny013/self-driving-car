@@ -10,6 +10,7 @@ class Car {
     this.maxSpeed = 3
     this.friction = 0.05
     this.angle = 0
+
     this.sensor = new Sensor(this)
     this.controls = new Controls()
   }
@@ -17,7 +18,6 @@ class Car {
   update() {
     this.#move()
     this.sensor.update()
-    console.log('update')
   }
 
   #move() {
