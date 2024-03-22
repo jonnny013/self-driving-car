@@ -23,6 +23,8 @@ if (localStorage.getItem('bestBrain')) {
   
 }
 
+
+
 const traffic = [
   new Car(
     road.getLaneCenter(1),
@@ -41,14 +43,59 @@ const traffic = [
     Math.floor(Math.random() * 2) + 1
   ),
   new Car(
+    road.getLaneCenter(0),
+    -500,
+    30,
+    50,
+    'DUMMY',
+    Math.floor(Math.random() * 2) + 1
+  ),
+  new Car(
+    road.getLaneCenter(0),
+    -700,
+    30,
+    50,
+    'DUMMY',
+    Math.floor(Math.random() * 2) + 1
+  ),
+  new Car(
+    road.getLaneCenter(1),
+    -500,
+    30,
+    50,
+    'DUMMY',
+    Math.floor(Math.random() * 2) + 1
+  ),
+  new Car(
     road.getLaneCenter(2),
-    -300,
+    -900,
     30,
     50,
     'DUMMY',
     Math.floor(Math.random() * 2) + 1
   ),
 ]
+
+const numOfCars = 100
+
+makeTraffic(numOfCars)
+
+function makeTraffic(numOfCars) {
+  for (let i = 0; i < numOfCars; i++) {
+    const laneIndex = Math.floor(Math.random() * 3)
+    const startY = -100 * (Math.floor(Math.random() * 200) + 1)
+    traffic.push(
+      new Car(
+        road.getLaneCenter(laneIndex),
+        startY,
+        30,
+        50,
+        'DUMMY',
+        Math.floor(Math.random() * 2) + 1
+      )
+    )
+  }
+}
 
 animate()
 
