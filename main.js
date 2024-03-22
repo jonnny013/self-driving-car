@@ -8,7 +8,7 @@ const carCtx = carCanvas.getContext('2d')
 const networkCtx = networkCanvas.getContext('2d')
 
 const road = new Road(carCanvas.width / 2, carCanvas.width * 0.9)
-const car = new Car(road.getLaneCenter(1), 100, 30, 50, "AI", 5)
+const car = new Car(road.getLaneCenter(1), 100, 30, 50, "KEYS", 5)
  const traffic = [
    new Car(
      road.getLaneCenter(1),
